@@ -1,0 +1,77 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.env
+.env
+
+# Django
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+
+# Migrations
+*/migrations/*
+
+# Secrets
+config/settings/local.py
+config/settings/*.env
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# VS Code files
+.vscode/
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+
+# Test results
+coverage/
+.tox/
+.nox/
+.cache
+.pytest_cache/
+
+# Logs
+*.log
+*.pot
+*.log.*
+*.log-*
+
+# Django stuff:
+*.log
+*.pot
+local_settings.py
+db.sqlite3
+media
+
+# IDEs and text editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Pycharm project files
+.idea/
+
+# Node files (if using npm or yarn)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Static and compiled files
+static/
+dist/
+build/
+
+# Env files
+.env
+django_smarti_ligia/__pycache__/settings.cpython-310.pyc
