@@ -3,6 +3,7 @@
 *.pyo
 *.pyd
 __pycache__/
+django_smarti_ligia/__pycache__/
 *.env
 .env
 
@@ -19,10 +20,6 @@ staticfiles/
 config/settings/local.py
 config/settings/*.env
 
-# Virtual environments
-venv/
-env/
-ENV/
 
 # VS Code files
 .vscode/
@@ -74,4 +71,3 @@ build/
 
 # Env files
 .env
-django_smarti_ligia/__pycache__/settings.cpython-310.pyc
