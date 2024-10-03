@@ -3,5 +3,25 @@
 {% block title %}Contact List{% endblock %}
 
 {% block content %}
-<h1>welcome</h1>
+
+    <div class="max-w-3xl mx-auto">
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-4 text-center">Welcome to the Contact List App</h1>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a href="{% url 'contact_list' %}" 
+             class="flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200">
+            View Contacts
+          </a>
+          
+          <a href="{% url 'contact_create' %}" 
+             class="flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200">
+            Add New Contact
+          </a>
+          
+       
+        </div>
+      </div>
+    </div>
+
 {% endblock %}
