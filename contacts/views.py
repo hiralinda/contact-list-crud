@@ -9,16 +9,23 @@ def index(request):
 
 # List all contacts
 def contact_list(request):
-    query = request.GET.get('q')
+    query = request.GET.get('q', '')
+    
     if query:
         contacts = Contact.objects.filter(
-            Q(name__icontains=query) | Q(email__icontains=query) | Q(phone__icontains=query)
+            Q(name__icontains=query) | 
+            Q(email__icontains=query) | 
+            Q(phone__icontains=query)
         )
     else:
         contacts = Contact.objects.all()
     
-    return render(request, 'contacts/contact_list.html', {'contacts': contacts, 'query': query})
-
+    context = {
+        'contacts': contacts,
+        'query': query,
+    }
+    
+    return render(request, 'contacts/contact_list.html', context)
 
 # Create a new contact
 def contact_create(request):
