@@ -10,6 +10,12 @@
             Add Contact
         </a>
     </div>
+
+    <!-- Search Form -->
+    <form method="GET" action="{% url 'contact_list' %}">
+        <input type="text" name="q" placeholder="Search..." value="{{ query }}" />
+        <button type="submit">Search</button>
+    </form>
     
     <div class="divide-y divide-gray-200">
         {% for contact in contacts %}
@@ -24,7 +30,13 @@
                 </div>
             </div>
         {% empty %}
-            <p class="py-4 text-gray-500 text-center">No contacts found.</p>
+            <p class="py-4 text-gray-500 text-center">
+                {% if request.GET.search %}
+                    No contacts found matching your search.
+                {% else %}
+                    No contacts found.
+                {% endif %}
+            </p>
         {% endfor %}
     </div>
 </div>

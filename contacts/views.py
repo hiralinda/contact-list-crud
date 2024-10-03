@@ -1,14 +1,24 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Contact
 from .forms import ContactForm
+from django.views.generic import ListView
+from django.db.models import Q
 
 def index(request):
     return render(request, 'index.html')
 
 # List all contacts
 def contact_list(request):
-    contacts = Contact.objects.all()
-    return render(request, 'contacts/contact_list.html', {'contacts': contacts})
+    query = request.GET.get('q')
+    if query:
+        contacts = Contact.objects.filter(
+            Q(name__icontains=query) | Q(email__icontains=query) | Q(phone__icontains=query)
+        )
+    else:
+        contacts = Contact.objects.all()
+    
+    return render(request, 'contacts/contact_list.html', {'contacts': contacts, 'query': query})
+
 
 # Create a new contact
 def contact_create(request):
