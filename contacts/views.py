@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Contact
 from .forms import ContactForm
 
+def index(request):
+    return render(request, 'index.html')
+
 # List all contacts
 def contact_list(request):
     contacts = Contact.objects.all()
