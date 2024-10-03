@@ -14,6 +14,7 @@ This project is a simple Contact List CRUD (Create, Read, Update, Delete) applic
 - **Django**: Web framework for the backend
 - **SQLite**: Default database used for this project
 - **HTML/CSS**: For basic templating and styling
+- **TailwindCSS**: For styling
 
 ## Setup Instructions
 
@@ -42,3 +43,33 @@ This project is a simple Contact List CRUD (Create, Read, Update, Delete) applic
     ```bash 
     python manage.py runserver
 6. Open a browser and go to http://127.0.0.1:8000/ to use the application.
+
+### Usage
+
+- On the home page, you'll see a list of contacts.
+- You can create a new contact by clicking "Add Contact."
+- You can edit or delete contacts by using the "Edit" or "Delete" buttons next to each contact.
+
+### File Structure
+
+contacts/: Contains the Django app for managing contacts (models, views, templates, etc.)
+django_smarti_ligia/: Contains the main project settings and configuration.
+templates/: Contains the HTML files used for rendering pages.
+db.sqlite3: SQLite database file.
+
+### Running Tests
+
+To run tests for the application:
+
+```bash
+python manage.py test
+```
+
+### License
+This project is for educational and testing purposes, created as part of a coding challenge.
+
+## Author
+Ligia Hirata
+
+## Challenge Context
+This project was developed as part of a coding challenge for a Backend Junior Developer role. The objective was to demonstrate the ability to build a basic CRUD application using Django.
