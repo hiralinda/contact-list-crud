@@ -12,7 +12,7 @@
         {% csrf_token %}
         {% for field in form %}
             <div class="space-y-1">
-                <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-gray-700">
+                <label for="{{ field.id_for_label }}" class="block text-md font-medium text-gray-700">
                     {{ field.label }}
                 </label>
                 <div class="mt-1">
@@ -33,7 +33,7 @@
             <a href="{% url 'contact_list' %}" class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300 transition">
                 Cancel
             </a>
-            <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">
+            <button type="submit" class="bg-blue-950 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">
                 Save Contact
             </button>
         </div>
