@@ -1,7 +1,27 @@
-<h1>Delete Contact</h1>
-<p>Are you sure you want to delete {{ contact.name }}?</p>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Yes, Delete</button>
-    <a href="{% url 'contact_list' %}">Cancel</a>
-</form>
+{% extends 'layout.html' %}
+
+{% block title %}Delete Contact{% endblock %}
+
+{% block content %}
+<div class="bg-white shadow rounded-lg p-6 max-w-md mx-auto">
+    <div class="text-center">
+        <h1 class="text-2xl font-bold text-gray-900 mb-4">Delete Contact</h1>
+        <p class="text-gray-600 mb-6">
+            Are you sure you want to delete <span class="font-medium">{{ contact.name }}</span>?
+            This action cannot be undone.
+        </p>
+        
+        <form method="post" class="space-y-4">
+            {% csrf_token %}
+            <div class="flex justify-center space-x-3">
+                <a href="{% url 'contact_list' %}" class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300 transition">
+                    Cancel
+                </a>
+                <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">
+                    Delete Contact
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
