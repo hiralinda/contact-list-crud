@@ -57,12 +57,12 @@ To run the tests, use the following command:
 - You can create a new contact by clicking "Add Contact."
 - You can edit or delete contacts by using the "Edit" or "Delete" buttons next to each contact.
 
-## License
-This project is for educational and testing purposes, created as part of a coding challenge.
+## Future Improvements
 
-
-## Challenge Context
-This project was developed as part of a coding challenge for a Backend Junior Developer role. The objective was to demonstrate the ability to build a basic CRUD application using Django.
+- Live Search with AJAX for real-time filtering without page reloads.
+- Pagination for better handling of large contact lists.
+- Advanced Search Filters (e.g., filter by name, email, or phone separately).
+- Sorting by name, email, or phone in ascending/descending order.
 
 ## Useful Resources
 
@@ -70,6 +70,13 @@ This project was developed as part of a coding challenge for a Backend Junior De
 - [CS50P - Lecture 5 - Unit Tests](https://www.youtube.com/watch?v=tIrcxwLqzjQ&t=2064s&pp=ygURY3M1MCBweXRob24gdGVzdHM%3D)
 - [Django Testing Tutorial - Testing Views #3](https://www.youtube.com/watch?v=hA_VxnxCHbo&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=3&ab_channel=TheDumbfounds)
 - [Django Testing Tutorial - Testing Models #4](https://www.youtube.com/watch?v=IKnp2ckuhzg&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=5&ab_channel=TheDumbfounds)
+
+## License
+This project is for educational and testing purposes, created as part of a coding challenge.
+
+## Challenge Context
+This project was developed as part of a coding challenge for a Backend Junior Developer role. The objective was to demonstrate the ability to build a basic CRUD application using Django.
+
 
 ## Author
 [Ligia Hirata](https://github.com/hiralinda)
