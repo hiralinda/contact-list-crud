@@ -13,8 +13,7 @@ This project is a simple Contact List CRUD (Create, Read, Update, Delete) applic
 
 - **Django**: Web framework for the backend
 - **SQLite**: Default database used for this project
-- **HTML/CSS**: For basic templating and styling
-- **TailwindCSS**: For styling
+- **HTML/TailwindCSS**: For basic templating and styling
 
 ## Setup Instructions
 
@@ -44,32 +43,33 @@ This project is a simple Contact List CRUD (Create, Read, Update, Delete) applic
     python manage.py runserver
 6. Open a browser and go to http://127.0.0.1:8000/ to use the application.
 
-### Usage
+### Running Tests
+
+The project includes a set of automated tests to ensure the correct behavior of the contact list CRUD operations and search functionality.
+
+To run the tests, use the following command:
+
+    python manage.py test
+
+## Usage
 
 - On the home page, you'll see a list of contacts.
 - You can create a new contact by clicking "Add Contact."
 - You can edit or delete contacts by using the "Edit" or "Delete" buttons next to each contact.
 
-### File Structure
-
-contacts/: Contains the Django app for managing contacts (models, views, templates, etc.)
-django_smarti_ligia/: Contains the main project settings and configuration.
-templates/: Contains the HTML files used for rendering pages.
-db.sqlite3: SQLite database file.
-
-### Running Tests
-
-To run tests for the application:
-
-```bash
-python manage.py test
-```
-
-### License
+## License
 This project is for educational and testing purposes, created as part of a coding challenge.
 
-## Author
-Ligia Hirata
 
 ## Challenge Context
 This project was developed as part of a coding challenge for a Backend Junior Developer role. The objective was to demonstrate the ability to build a basic CRUD application using Django.
+
+## Useful Resources
+
+- [Django Framework | Complete CRUD operations Python | create, read, update, delete](https://www.youtube.com/watch?v=gLfEa-3cvKw&t=363s&ab_channel=PythonDeveloper-0.1)
+- [CS50P - Lecture 5 - Unit Tests](https://www.youtube.com/watch?v=tIrcxwLqzjQ&t=2064s&pp=ygURY3M1MCBweXRob24gdGVzdHM%3D)
+- [Django Testing Tutorial - Testing Views #3](https://www.youtube.com/watch?v=hA_VxnxCHbo&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=3&ab_channel=TheDumbfounds)
+- [Django Testing Tutorial - Testing Models #4](https://www.youtube.com/watch?v=IKnp2ckuhzg&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=5&ab_channel=TheDumbfounds)
+
+## Author
+[Ligia Hirata](https://github.com/hiralinda)
