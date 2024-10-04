@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from .models import Contact
 from .forms import ContactForm
-from django.views.generic import ListView
+# from django.views.generic import ListView
 from django.db.models import Q
 
 def index(request):
@@ -29,31 +30,50 @@ def contact_list(request):
 
 # Create a new contact
 def contact_create(request):
-    if request.method == "POST":
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('contact_list')
-    else:
-        form = ContactForm()
-    return render(request, 'contacts/contact_form.html', {'form': form})
+    try:
+        if request.method == "POST":
+            form = ContactForm(request.POST)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Contact created successfully!')
+                return redirect('contact_list')
+        else:
+            form = ContactForm()
+        return render(request, 'contacts/contact_form.html', {'form': form})
+    except Exception as e:
+        messages.error(request, 'An error occurred while creating the contact.')
+        return render(request, 'contacts/contact_form.html', {'form': form})
 
 # Update an existing contact
 def contact_update(request, id):
     contact = get_object_or_404(Contact, id=id)
-    if request.method == "POST":
-        form = ContactForm(request.POST, instance=contact)
-        if form.is_valid():
-            form.save()
-            return redirect('contact_list')
-    else:
-        form = ContactForm(instance=contact)
+    
+    try:
+        if request.method == "POST":
+            form = ContactForm(request.POST, instance=contact)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Contact updated successfully!')
+                return redirect('contact_list')
+            else:
+                messages.error(request, 'There was an issue with the form. Please correct the errors and try again.')
+        else:
+            form = ContactForm(instance=contact)
+            
+    except Exception as e:
+        messages.error(request, 'An unexpected error occurred while updating the contact.')
+        return render(request, 'contacts/contact_form.html', {'form': form})
+    
     return render(request, 'contacts/contact_form.html', {'form': form})
 
 # Delete a contact
 def contact_delete(request, id):
     contact = get_object_or_404(Contact, id=id)
     if request.method == "POST":
-        contact.delete()
-        return redirect('contact_list')
+        try:
+            contact.delete()
+            messages.success(request, 'Contact deleted successfully!')
+            return redirect('contact_list')
+        except Exception as e:
+            messages.error(request, 'An error occurred while deleting the contact.')
     return render(request, 'contacts/contact_confirm_delete.html', {'contact': contact})
