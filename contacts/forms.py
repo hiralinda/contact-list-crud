@@ -8,14 +8,17 @@ class ContactForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={
                 'class': 'mt-3 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
-                'placeholder': 'Enter name'
+                'placeholder': 'Enter name',
+                'autocomplete': 'off'
             }),
             'email': forms.EmailInput(attrs={
                 'class': 'mt-3 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
-                'placeholder': 'Enter email'
+                'placeholder': 'Enter email',
+                'autocomplete': 'off'
             }),
             'phone': forms.TextInput(attrs={
                 'class': 'mt-3 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm',
-                'placeholder': 'Enter phone'
+                'placeholder': 'Enter phone',
+                'autocomplete': 'off'
             }),
         }
