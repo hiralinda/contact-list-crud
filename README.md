@@ -2,6 +2,8 @@
 
 This project is a simple Contact List CRUD (Create, Read, Update, Delete) application built using Django. The app allows users to manage a list of contacts with fields for name, email, and phone number. This project was created as part of a coding challenge for a Backend Junior Developer role.
 
+[Video Demo](https://youtu.be/-mJwimIGQgQ)
+
 ## Features
 
 - Add new contacts with name, email, and phone number
